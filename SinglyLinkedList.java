@@ -102,7 +102,23 @@ public class SinglyLinkedList<E> {
         return last;
     }
 
-    public void reverse(){       
-                 
+    public void reverse(){   
+        
+        if (size == 0) {
+            return;
+        }
+
+        Node<E> prev = null;
+        Node<E> current = head;
+
+        while (current != null) {
+            Node<E> next = current.getNext();
+
+            current.setNext(prev);
+            prev = current;
+            current = next;
+        }
+        tail = head;
+        head = prev;
     }
 }
