@@ -79,7 +79,27 @@ public class SinglyLinkedList<E> {
     }
 
     public E removeLast(){
-      
+
+        if (isEmpty()) {
+            return null;
+        }
+
+        E last = tail.getElement();
+
+        if (size == 1) {
+            head = null;
+            tail = null;
+        } else {
+            Node<E> current = head;
+            while (current.getNext() != tail) {
+                current = current.getNext();
+            }
+            tail = current;
+            tail.setNext(null);
+        }
+
+        size--;
+        return last;
     }
 
     public void reverse(){       
