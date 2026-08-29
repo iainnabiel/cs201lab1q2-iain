@@ -66,8 +66,16 @@ public class SinglyLinkedList<E> {
     }
 
     // Write your codes below
+    @Override
     public String toString(){
-     
+        String result = "";
+        Node<E> current = head;
+
+        while (current != null) {
+            result += current.getElement();
+            current = current.getNext();
+        }
+        return result;
     }
 
     public E removeLast(){
