@@ -120,5 +120,6 @@ public class SinglyLinkedList<E> {
         }
         tail = head;
         head = prev;
+        
     }
 }
