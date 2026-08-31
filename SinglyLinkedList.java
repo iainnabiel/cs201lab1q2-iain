@@ -118,8 +118,8 @@ public class SinglyLinkedList<E> {
             prev = current;
             current = next;
         }
+        
         tail = head;
         head = prev;
-        
     }
 }
